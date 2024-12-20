@@ -1,0 +1,32 @@
+﻿@model Lab3.Models.Result
+
+@{ ViewData["Title"] = "Quiz"; }
+
+
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="quiz">
+            <h2>Quiz</h2>
+
+            <input name="value1" class="form-control col-md-1" style="display: inline" value="@ViewBag.numb1" />
+            <input name="sign" class="form-control col-md-1" style="display: inline" value="@ViewBag.sign" />
+            <input name="value2" class="form-control col-md-1" style="display: inline" value="@ViewBag.numb2" />
+            <h4 class="col-md-1" style="display: inline-flex"> =</h4>
+
+            <input asp-for="Answer" class="form-control" />
+            <span asp-validation-for="Answer" class="text-danger"></span>
+
+            <br />
+            <button formmethod="post" formaction="~/Quiz/Next" type="submit" class="btn btn-success col-md">Next</button>
+            <button formmethod="post" formaction="~/Quiz/Finish" type="submit" class="btn btn-primary col-md">Finish</button>
+        </form>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

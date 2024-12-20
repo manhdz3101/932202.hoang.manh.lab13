@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "quizResult";
+    int number = 1;
+    if (ViewBag.ListResult.Count == 0) { ViewBag.ListResult.Add("Yay"); }
+}
+
+<h2>QuizResult</h2>
+<h2>@ViewBag.C</h2>
+<h3>Right answers @ViewBag.RightAnswersCount of @ViewBag.AnswersCount</h3>
+
+<h2>Answers:</h2>
+@foreach (string result in ViewBag.ListResult)
+{
+    <h3>@(number++). @result</h3>
+}
